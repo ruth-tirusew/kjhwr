@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: wind-portal-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: CORS_ORIGINS
+        sync: false 
+      - key: DEFAULT_CUTOFF
+        value: "09:00"
+      - key: SNAPSHOT_DIR
+        value: /app/data/snapshots
+      - key: SNAPSHOT_ID
+        value: 20261102T080553Z
