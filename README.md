@@ -25,7 +25,7 @@ This project was built with AI assistance (Claude Code).
 | `frontend/src/App.tsx`, `queries.ts`, `api.ts` | Page, data fetching and API client |
 | `frontend/src/components/` | `ForecastChart.tsx`, `MetricsPanel.tsx` and small UI parts in `ui/` |
 | `frontend/Dockerfile`, `vercel.json` | Front-end image and Vercel build settings |
-| `data/snapshots/` | Immutable data snapshots (parquet + `manifest.json`). One is committed and served by the deployed API |
+| `backend/snapshots/` | Immutable data snapshots (parquet + `manifest.json`). One is committed and served by the deployed API |
 | `docker-compose.yml` | Runs API (`:8000`) and UI (`:3000`) together |
 | `render.yaml` | Render blueprint for the API |
 | `.env.example` | Environment variables (copy to `.env`) |
@@ -69,7 +69,7 @@ Copy `.env.example` to `.env`. `docker compose` reads it automatically. Backend 
 
 ## Deploy
 
-The API never calls Elexon at runtime. One snapshot (`data/snapshots/20261102T080553Z`) is committed and baked into the API image.
+The API never calls Elexon at runtime. One snapshot (`backend/snapshots/20261102T080553Z`) is committed and baked into the API image.
 
 **API on Render.** Create a Blueprint from this repo. `render.yaml` defines a Docker web service with the repository root as the build context (so `data/` is reachable), health check `/health`, and the env vars above. The container listens on `$PORT`. After the first deploy, set `CORS_ORIGINS` in the Render dashboard to the Vercel URL.
 

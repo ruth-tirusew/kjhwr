@@ -5,7 +5,7 @@ COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY backend/app ./app
 # The API never calls Elexon at runtime, so the blessed snapshot is baked into the image.
-COPY data/snapshots ./data/snapshots
+COPY backend/snapshots ./data/snapshots
 ENV SNAPSHOT_DIR=/app/data/snapshots
 EXPOSE 8000
 # Render injects $PORT; default to 8000 locally.

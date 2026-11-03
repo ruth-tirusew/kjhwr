@@ -4,7 +4,7 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    snapshot_dir: Path = Path(__file__).resolve().parents[2] / "data" / "snapshots"
+    snapshot_dir: Path = Path(__file__).resolve().parents[2] / "snapshots"
     snapshot_id: str | None = None  # optional pin; empty or unset serves the newest snapshot
     cors_origins: str = "http://localhost:5173"
     default_cutoff: str = "09:00"  # UK time on D-1; configurable

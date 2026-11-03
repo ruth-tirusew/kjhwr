@@ -8,9 +8,9 @@ dist/
 .env
 
 # Snapshots are ignored except the one blessed snapshot the deployed API serves.
-data/snapshots/*
-!data/snapshots/.gitkeep
-!data/snapshots/20261102T080553Z/
+backend/snapshots/*
+!backend/snapshots/.gitkeep
+!backend/snapshots/20261102T080553Z/
 demo/node_modules/
 demo/out/
 demo/.tools/
