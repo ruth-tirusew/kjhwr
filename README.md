@@ -3,8 +3,8 @@
 Pilot portal for a UK day-ahead buying team. It shows the national wind forecast that was available at the decision cutoff, how accurate those forecasts have been against actuals, and a procurement buffer in MW. Data is Elexon BMRS only (`WINDFOR` forecasts, `FUELHH` wind actuals) for January 2026.
 
 ## Live app
-
-
+Frontend url - https://wind-forecast-gridbricks.vercel.app/
+Backend url - https://kjhwr-0x7m.onrender.com/
 
 ## AI tools
 This project was built with AI assistance (Claude Code). 
